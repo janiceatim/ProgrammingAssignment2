@@ -1,12 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+# Below are two R functions (makeCacheMatrix and cacheSolve) for the Peer Reviewed Lexical Scoping Task.
+# Matrix inversion is usually costly consumption, as such catching the inverse of a matrix is beneficial
 
-# The functions below cache potentially time- consuming computations. 
-# makeCacheMatrix creates a special "matrix" which does the following, 
-# sets and gets the value of a matrix and inverse, respectively. 
-# The functuin firsts checks to see if the inverse is already calculated.
-
-## Write a short comment describing this function
+# makeCacheMatrix function creates a special "matrix"
 
 makeCacheMatrix <- function(x = matrix()) {
        inv <- NULL
@@ -17,11 +12,14 @@ makeCacheMatrix <- function(x = matrix()) {
        get <- function() x
        setInverse <- function(Inverse) inv <<- Inverse
        getInverse <- function() inv
-       list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
+       list(set = set, 
+            get = get, 
+            setInverse = setInverse, 
+            getInverse = getInverse)
        }
 
-
-## Write a short comment describing this function
+# cacheSolve function computes the inverse of the above
+# If the inverse is calculated, the computation is skipped
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
